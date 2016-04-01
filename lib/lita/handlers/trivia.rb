@@ -69,11 +69,11 @@ module Lita
         end
 
         def title_and_question
-          category + "\n" + question + "\n"  + answer
+          category + "\n" + question + "\n" + answer
         end
 
         def answer
-          payload[:answer].gsub(/<\/?[^>]*>/, "")
+          strip_html(payload[:answer])
         end
 
         def try_answer(query)
@@ -81,6 +81,10 @@ module Lita
         end
 
         private
+        def strip_html(str)
+          str.gsub(/<\/?[^>]*>/, "")
+        end
+
         def correct?(query)
           jarow = FuzzyStringMatch::JaroWinkler.create(:native)
           jarow.getDistance(answer, query) > 0.8 ||
