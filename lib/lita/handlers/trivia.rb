@@ -68,7 +68,7 @@ module Lita
         end
 
         def title_and_question
-          category + "\n" + question + "\n" + answer
+          category + "\n" + question
         end
 
         def answer
