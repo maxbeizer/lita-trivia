@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "lita-trivia"
-  spec.version       = "0.1.0"
+  spec.version       = "1.0.0"
   spec.authors       = ["max beizer"]
   spec.email         = ["max.beizer@gmail.com"]
   spec.description   = "A lita trivia plugin"
